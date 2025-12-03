@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP Ferika & Indra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf8f3;
+      color: #4e3620;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      color: #3b2c20;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1em;
+      color: #6b5433;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #fffaf3;
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 30px 25px;
+      border-radius: 18px;
+      box-shadow: 0 5px 25px rgba(75, 54, 33, 0.15);
+      border-top: 4px solid #c9a27d;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: 500;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #5c4530;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d8c3a5;
+      border-radius: 10px;
+      font-size: 14px;
+      background-color: #fefcf8;
+      color: #4e3620;
+      transition: all 0.2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #b58c63;
+      box-shadow: 0 0 5px rgba(181, 140, 99, 0.4);
+    }
+
+    button {
+      margin-top: 25px;
+      background: linear-gradient(135deg, #c9a27d, #b78a66);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(185, 138, 94, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #b78a66, #9e7454);
+      transform: translateY(-2px);
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #9b8564;
+    }
+  </style>
+</head>
+<body>
+  <h2>Konfirmasi Kehadiran</h2>
+  <p>Mohon isi formulir di bawah ini untuk RSVP kehadiran Anda</p>
+
+  <form action="https://formspree.io/f/mblzezzv" method="POST">
+    <label>Nama Lengkap:</label>
+    <input type="text" name="nama" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Apakah Anda akan hadir?</label>
+    <select name="kehadiran" required>
+      <option value="">-- Pilih Jawaban --</option>
+      <option value="Ya">Ya, saya akan hadir</option>
+      <option value="Tidak">Maaf, tidak bisa hadir</option>
+    </select>
+
+    <label>Ucapan / Pesan untuk Mempelai:</label>
+    <textarea name="pesan" rows="4" placeholder="Tulis ucapan atau doa terbaik Anda..."></textarea>
+
+    <button type="submit">Kirim RSVP</button>
+  </form>
+
+  <footer>Terima kasih atas doa dan perhatian Anda 🤎</footer>
+</body>
+</html>

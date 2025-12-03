@@ -1,0 +1,282 @@
+/* ===============================
+   GLOBAL STYLES & FONTS 
+   =============================== */
+:root {
+    --primary-color: #8B4513; /* Saddle Brown/Coklat Gelap */
+    --secondary-color: #A0522D; /* Sienna/Coklat Sedang */
+    --bg-light: #FBF8F1; /* Warna Latar Belakang Krem/Pucat */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: #333;
+}
+
+/* ===============================
+   BAGIAN I: INTRO SCREEN 
+   =============================== */
+#intro-screen {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* ... kode lainnya ... */
+    z-index: 1000;
+    transition: opacity 1s ease-out, visibility 1s ease-out; /* Tambahkan Transisi */
+}
+
+/* Class baru untuk menyembunyikan layar intro */
+.intro-hidden {
+    opacity: 0; /* Membuat elemen transparan */
+    visibility: hidden; /* Menyembunyikan elemen agar tidak bisa diklik */
+}
+
+.intro-heading {
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.names-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.intro-to-text {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.guest-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin: 10px 0 30px;
+    padding: 0 20px;
+}
+
+.btn-open-invitation {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 50px; /* Bentuk kapsul */
+    transition: background-color 0.3s;
+}
+
+.btn-open-invitation:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Icon */
+.btn-open-invitation svg {
+    margin-right: 8px;
+}
+
+
+/* ===============================
+   BAGIAN II: MAIN CONTENT 
+   =============================== */
+
+/* Section Umum */
+section {
+    padding: 40px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-detail {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 80px;
+}
+
+.photo-frame {
+    border: 5px solid var(--secondary-color);
+    border-radius: 10px;
+    max-width: 80%;
+    height: auto;
+}
+
+.quotes {
+    font-style: italic;
+    font-family: var(--font-heading);
+    color: #777;
+    margin-top: 30px;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    border: 1px solid #eee;
+    padding: 15px 0;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.timer-value {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 0;
+}
+
+/* Detail Acara */
+.event-card {
+    background-color: #fff;
+    border: 1px dashed var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.event-title {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.event-date, .event-time {
+    margin: 5px 0;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    border-radius: 50px;
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* RSVP Section */
+.rsvp-section {
+    background-color: #fff;
+}
+
+.btn-rsvp {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 100%;
+}
+.btn-rsvp:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Footer */
+.footer-style {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 767.98px) {
+    .names-heading {
+        font-size: 3rem;
+    }
+    .photo-frame {
+        max-width: 100%;
+    }
+    .event-card {
+        margin: 10px 0;
+    }
+}
+/* ===============================
+   MAP RESPONSIVE 
+   =============================== */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Rasio aspek 16:9 (300px tinggi / 533px lebar ≈ 0.5625) */
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+/* ===============================
+   DETAIL MEMPELAI DAN ORANG TUA 
+   =============================== */
+.detail-mempelai {
+    padding: 20px 0;
+    font-family: var(--font-body);
+}
+
+.name-mempelai {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color); /* Coklat Gelap */
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.anak-ke {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.ortu-name {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Style untuk separator (tanda '&') */
+.separator-ornament {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--secondary-color) !important;
+}
+
+/* Responsif untuk layar kecil (mobile) */
+@media (max-width: 767.98px) {
+    .name-mempelai {
+        font-size: 1.5rem;
+    }
+    /* Tambahkan garis pemisah tipis antara dua mempelai di HP */
+    .detail-mempelai .col-md-5:first-child {
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 20px !important;
+    }
+}
